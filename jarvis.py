@@ -33,6 +33,14 @@ def report_time():
     current_time = datetime.datetime.now().strftime('%I:%M %p')
     return current_time
 
+def speak_va(transcribed_query):
+    engine.say(transcribed_query)
+    engine.runAndWait()
+
+def make_request(url):
+  response = requests.get(url)
+  return response.text
+
 def activate_va():
     user_query = input_query()
     print('user query ....', user_query)
